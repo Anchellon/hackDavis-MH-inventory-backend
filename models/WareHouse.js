@@ -14,8 +14,9 @@ const WareHouseSchema = new Schema({
         //         return value <= this.options.length;
         //     },
         // ],
+        default: 0,
     },
-    requiredMore: {
+    totalRequired: {
         type: Number,
         required: true,
         validate: [
@@ -23,6 +24,7 @@ const WareHouseSchema = new Schema({
                 return value <= 0;
             },
         ],
+        default: 0,
     },
 });
 WareHouseSchema.plugin(timestampPlugin);

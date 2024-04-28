@@ -7,3 +7,10 @@ docker run -d --rm -p 27017:27017 --name mh-inventory-mongo1 -v C:\Work\Code\jav
 docker run -d --rm -p 27018:27017 --name mh-inventory-mongo2 -v C:\Work\Code\javascript\HackDavis\inventory-db-2:/data/db --network mongoCluster mongo:5 mongod --replSet myReplicaSet --bind_ip localhost,mh-inventory-mongo2
 
 docker run -d --rm -p 27019:27017 --name mh-inventory-mongo3 -v C:\Work\Code\javascript\HackDavis\inventory-db-3:/data/db --network mongoCluster mongo:5 mongod --replSet myReplicaSet --bind_ip localhost,mh-inventory-mongo3
+
+
+
+Initiate the repl set 
+https://stackoverflow.com/questions/70081140/mongodb-replica-set-cannot-use-non-local-read-concern-until-replica-set-is-fin
+
+mongodb://mh-inventory-mongo1:27017,mh-inventory-mongo2:27018,mh-inventory-mongo3:27019/?replicaSet=myReplicaSet

@@ -15,7 +15,7 @@ const TransactionSchema = new Schema({
         //     },
         // ],
     },
-    category: { type: String, required: true },
+    donatedBy: { type: String, required: true },
 });
 TransactionSchema.plugin(timestampPlugin);
 module.exports = mongoose.model("Transaction", TransactionSchema);

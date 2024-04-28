@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
 const mongoDB =
-    "mongodb://mh-inventory-mongo1:27017,mh-inventory-mongo2:27018,mh-inventory-mongo3:27019/?replicaSet=myReplicaSet";
+    "mongodb://mh-inventory-mongo1:27017,mh-inventory-mongo2:27018,mh-inventory-mongo3:27019/MH-inventory-db?replicaSet=myReplicaSet";
 main().catch((err) => console.log(err));
 async function main() {
     await mongoose.connect(mongoDB);

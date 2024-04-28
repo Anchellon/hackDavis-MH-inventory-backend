@@ -22,10 +22,10 @@ app.use(cookieParser());
 
 // Adding routes
 // app.use("/users", usersRouter);
-// app.use("/api", api);
+app.use("/api", api);
 
 // app.get("/", (req, res) => {
-//   res.send("Hello World!");
+//     res.send("Hello World!");
 // });
 
 app.listen(port, () => {
