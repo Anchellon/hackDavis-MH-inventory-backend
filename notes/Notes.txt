@@ -1,0 +1,9 @@
+//docker run --name some-mongo -v C:\Work\Code\javascript\express\Quizzy\quizzy-db:/data/db -d mongo
+
+
+Rpl set
+docker run -d --rm -p 27017:27017 --name mh-inventory-mongo1 -v C:\Work\Code\javascript\HackDavis\inventory-db-1:/data/db --network mongoCluster mongo:5 mongod --replSet myReplicaSet --bind_ip localhost,mh-inventory-mongo1 
+
+docker run -d --rm -p 27018:27017 --name mh-inventory-mongo2 -v C:\Work\Code\javascript\HackDavis\inventory-db-2:/data/db --network mongoCluster mongo:5 mongod --replSet myReplicaSet --bind_ip localhost,mh-inventory-mongo2
+
+docker run -d --rm -p 27019:27017 --name mh-inventory-mongo3 -v C:\Work\Code\javascript\HackDavis\inventory-db-3:/data/db --network mongoCluster mongo:5 mongod --replSet myReplicaSet --bind_ip localhost,mh-inventory-mongo3
